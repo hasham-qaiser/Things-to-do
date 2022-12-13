@@ -1,14 +1,20 @@
+<script>
+	export let todoInput;
+	export let add;
+</script>
+
 <div>
 	<h2 class="mt-6 text-center text-3xl font-bold tracking-tight text-gray-900">
 		This is your todo list
 	</h2>
 </div>
-<form class="mt-8 space-y-6" action="#" method="POST">
+<form class="mt-8 space-y-6" on:submit={add}>
 	<input type="hidden" name="remember" value="true" />
 	<div class="-space-y-px rounded-md shadow-sm">
 		<div>
 			<label for="todo-input" class="sr-only">Email address</label>
 			<input
+				bind:value={todoInput}
 				id="todo-input"
 				name="todo-input"
 				type="text"
